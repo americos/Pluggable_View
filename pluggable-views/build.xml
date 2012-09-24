@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <project name="Test prestocli ant" default="all" basedir=".">
+    <property file="build.properties"/>
+    <property name="libs.dir" value="${basedir}/libs" />
+    <property name="src.dir" value="${basedir}/src" />
+    <property name="apps.dir" value="${basedir}/apps" />
+    <taskdef name="presto.lib.import" classname="com.jackbe.jbp.sas.cli.ant.ImportLib" classpath="${prestocli.jar}" />
+    
+	<target name="hello-world">
+        <presto.lib.import 
+            dir="${libs.dir}/hello-world"
+            id="hello-world"
+            name="Sample Hello World"
+            description="Sample Hello World Custom View"
+            loadConfirmation="Sample.view.HelloWorld"
+            type="view"
+            subtype="Sample"
+            dependsOn="jquery"
+        />
+    </target>
+ 
+
+    <target name="all" depends="hello-world"></target>
+ </project>
