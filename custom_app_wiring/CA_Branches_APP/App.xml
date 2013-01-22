@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<app height="auto" id="CA_Branches_APP" jsclass="Presto.BasicApp"
+     name="CA_Branches_APP"
+     refreshinterval="0"
+     sandbox="false"
+     width="auto">
+   <title>CA_Branches_APP</title>
+   <author>JackBe Presto</author>
+   <description/>
+   <properties>
+      <property datatype="boolean" defaultvalue="true" label="Enable Pagination"
+                name="presto.showPaginationControls"
+                required="true"/>
+      <property datatype="enum" defaultvalue="20" label="Rows per Page"
+                name="presto.rowsPerPage"
+                possiblevalues="5,10,20,50,75,100,200,All"/>
+      <property datatype="enum" defaultvalue="gray" label="Theme" name="presto.appTheme"
+                possiblevalues="gray,apple,green,black,blue,yellow,mint,gblue,brown,red"
+                required="true"/>
+   </properties>
+   <views>
+      <view elemId="6" enable="true" isdefault="false" name="BarChart"/>
+   </views>
+   <presto-meta name="service" type="text">CA_Branches</presto-meta>
+   <presto-meta name="operation" type="text">getData</presto-meta>
+   <presto-meta name="serviceuri" type="text">/presto/edge/api/rest/CA_Branches/getData?x-presto-resultFormat=json</presto-meta>
+   <presto-meta name="contenttype" type="text">application/x-www-form-urlencoded</presto-meta>
+   <presto-meta name="showsort" type="text">false</presto-meta>
+   <presto-meta name="showfilter" type="text">false</presto-meta>
+   <presto-meta name="postbody"><![CDATA[[object Object]]]></presto-meta>
+   <presto-meta name="viewconfig"><![CDATA[[{"viewType": "barChart", "title": "Bar Chart", "description": "", "events": ["element-click"], "minHeight": 220, "categories": {"label": "Branch", "value": "Branch"}, "series": [{"label": "Lat", "value": "Lat"}], "visualization": "2d", "stack": "no", "scroll": "no", "columns": [{"name": {"label": "Branch", "value": "Branch"}}, {"name": [{"label": "Lat", "value": "Lat"}]}], "name": "BarChart", "chart-type": "bar", "attributes": {"numberSpinner": "0", "baseFontSize": "10", "outCnvBaseFontSize": "10", "showBorder": "0", "baseFont": "Verdana", "outCnvBaseFont": "Verdana", "formatNumberScale": "1", "formatNumber": "1", "forceDecimals": "0", "decimalSeparator": ".", "thousandSeparator": ",", "logoPosition": "TL", "showValues": "1", "showLabels": "1", "showToolTip": "1", "seriesNameInToolTip": "0", "showToolTipShadow": "0", "showLegend": "1", "legendPosition": "BOTTOM", "legendAllowDrag": "0", "legendMarkerCircle": "0", "reverseLegend": "0", "legendShadow": "1", "palette": "3", "animation": "1", "bgColor": "FF0000", "bgAlpha": "0", "borderAlpha": "", "borderThickness": "", "bgRatio": "", "bgAngle": "180", "logoAlpha": "", "logoScale": "", "legendBgAlpha": "", "legendBorderAlpha": ""}, "repeating-element": "/DataTable/Entry"}]]]></presto-meta>
+   <presto-meta name="showviewtitle" type="text">true</presto-meta>
+   <presto-meta name="layout" type="text">tab</presto-meta>
+   <presto-meta name="presto.desktopCompatible" type="text">true</presto-meta>
+   <presto-meta name="presto.phoneCompatible" type="text">false</presto-meta>
+   <presto-meta name="presto.tabletCompatible" type="text">false</presto-meta>
+   <presto-meta name="presto.shareable" type="text">true</presto-meta>
+   <presto-meta name="presto.allowOpenNewWindow" type="text">true</presto-meta>
+   <topics>
+      <topic datatype="object" name="rowselect" subscribe="true">
+         <properties>
+            <property datatype="string" name="Branch" required="false"/>
+            <property datatype="string" name="State" required="false"/>
+            <property datatype="string" name="Address" required="false"/>
+            <property datatype="string" name="Lat" required="false"/>
+            <property datatype="string" name="Zip" required="false"/>
+            <property datatype="string" name="Lon" required="false"/>
+            <property datatype="string" name="City" required="false"/>
+            <property datatype="string" name="[object Object]" required="false"/>
+         </properties>
+      </topic>
+      <topic datatype="object" name="dataTable.rowselect" publish="true">
+         <properties>
+            <property datatype="string" name="Branch" required="false"/>
+            <property datatype="string" name="State" required="false"/>
+            <property datatype="string" name="Address" required="false"/>
+            <property datatype="string" name="Lat" required="false"/>
+            <property datatype="string" name="Zip" required="false"/>
+            <property datatype="string" name="Lon" required="false"/>
+            <property datatype="string" name="City" required="false"/>
+         </properties>
+      </topic>
+   </topics>
+   <requires>
+      <require name="basic-app" type="library"/>
+   </requires>
+   <dependson>
+      <resource name="CA_Branches" operation="getData" type="service"/>
+   </dependson>
+</app>

@@ -1,0 +1,41 @@
+<mashup xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+xsi:schemaLocation='http://www.openmashup.org/schemas/v1.0/EMML/../schemas/EMMLPrestoSpec.xsd'
+xmlns='http://www.openmashup.org/schemas/v1.0/EMML'
+xmlns:macro='http://www.openmashup.org/schemas/v1.0/EMMLMacro'
+xmlns:presto='http://www.jackbe.com/v1.0/EMMLPrestoExtensions'
+name='newMashup'>
+  
+  
+  <output name='result' type='document' />
+  
+  
+  <input name='city' type='string' default='MIAMI#01'></input>
+  
+  
+  <variable name='sample_data' type='document'>
+   <branch>
+      <city>
+        <name>MIAMI#01</name>
+        <manager>Allison Smith</manager>
+        <phone>222-333-4444</phone>
+      </city>
+      <city>
+        <name>MIAMI#02</name>
+        <manager>Greg Taylor</manager>
+        <phone>444-555-6666</phone>
+      </city>
+      <city>
+        <name>FTLauderdale#01</name>
+        <manager>Jim Grey</manager>
+        <phone>333-888-9999</phone>
+      </city>
+    </branch>
+  </variable>
+  
+  
+  <display message='City Param:' variable='city' />
+   
+  <assign fromexpr='$sample_data//city[name="{$city}"]' outputvariable='result' />
+    
+  
+</mashup>​
