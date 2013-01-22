@@ -5,6 +5,7 @@ Sample.Hello = function( app ) {
     
     //Branch comes like: "Miami #01" so lets remove that space and encode the hash.
     var branch = data.Branch.replace(/ #/, "%23");  //HTML Escape code for # is %23
+    branch = branch.replace(/ /g,""); //Remove any white space left
     
     var appContainer = app.getContainer ? app.getContainer() : undefined;
     if(appContainer){
