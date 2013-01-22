@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>At&t Demo Page</title>
+
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css">
+		<!-- Remove the line below for default theme -->
+		<link rel="stylesheet" href="jquery-ui-1.10.0.custom/css/sunny/jquery-ui-1.10.0.custom.css">
+		
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+
+
+		<script>
+			$(function(){
+				$("#tabs").tabs();
+			})
+		</script>
+
+	</head>
+	<body>
+		<div id="tabs">
+			<ul>
+				<li><a href="#tabs-1">First Tab</a></li>
+				<li><a href="#tabs-2">Second Tab</a></li>
+				<li><a href="#tabs-3">third Tab</a></li>
+			</ul>
+
+			<div id="tabs-1">
+				<script src="http://prestocloud.jackbe.com/presto/hub/mashlet/CA_Branches_APP?title=CA_Branches_APP&height=200&width=200&refreshinterval=&hideheader=false&standalone=false"></script>
+			</div>
+			<div id="tabs-2">
+				<script src="http://prestocloud.jackbe.com/presto/hub/mashlet/att_sample_button_selections?title=Hello+World&height=200&width=200&refreshinterval=&hideheader=true&standalone=true"></script>
+			</div>
+			<div id="tabs-3">
+				<p>Third tab!</p>
+			</div>
+		</div>
+
+	</body>
+</html>
