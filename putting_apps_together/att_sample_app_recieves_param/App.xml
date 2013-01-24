@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<app height="auto" id="att_sample_app_recieves_param" jsclass="Presto.BasicApp"
+     name="att_sample_app_recieves_param"
+     refreshinterval="0"
+     sandbox="false"
+     width="auto">
+   <title>att_sample_app_recieves_param</title>
+   <author>JackBe Presto</author>
+   <description/>
+   <properties>
+      <property datatype="string" defaultvalue="MIAMI#01" isinput="true" label="city"
+                name="city"
+                possiblevalues=""
+                presto_isheader="false"
+                presto_path="/city"
+                readonly="false"
+                tooltip=""
+                validation="any"
+                visibility="hidden"
+                width=""/>
+      <property datatype="boolean" defaultvalue="true" label="Enable Pagination"
+                name="presto.showPaginationControls"
+                required="true"/>
+      <property datatype="enum" defaultvalue="20" label="Rows per Page"
+                name="presto.rowsPerPage"
+                possiblevalues="5,10,20,50,75,100,200,All"/>
+      <property datatype="enum" defaultvalue="gray" label="Theme" name="presto.appTheme"
+                possiblevalues="gray,apple,green,black,blue,yellow,mint,gblue,brown,red"
+                required="true"/>
+   </properties>
+   <views>
+      <view elemId="0" enable="false" isdefault="false" name="Input Form View">
+         <title>Input Form View</title>
+      </view>
+      <view elemId="5" enable="true" isdefault="false" name="grid"/>
+   </views>
+   <presto-meta name="service" type="text">att_sample_mashup</presto-meta>
+   <presto-meta name="operation" type="text">Invoke</presto-meta>
+   <presto-meta name="serviceuri" type="text">/presto/edge/api/rest/att_sample_mashup/Invoke?x-presto-resultFormat=json</presto-meta>
+   <presto-meta name="contenttype" type="text">application/x-www-form-urlencoded</presto-meta>
+   <presto-meta name="showsort" type="text">false</presto-meta>
+   <presto-meta name="showfilter" type="text">false</presto-meta>
+   <presto-meta name="postbody"><![CDATA[[object Object]]]></presto-meta>
+   <presto-meta name="viewconfig"><![CDATA[[{"name": "Input Form View", "title": "Input Form View", "viewType": "inputformview", "lib": "inputformview", "events": [], "id": "Input_Form_View", "refresh": true}, {"viewType": "complexgrid", "title": "Grid", "description": "", "lib": "complexgrid", "events": ["rowclick", "cellclick"], "minHeight": 120, "name": "grid", "record": "/city", "columns": [{"header": "name", "name": "name", "data-type": "string"}, {"header": "manager", "name": "manager", "data-type": "string"}, {"header": "phone", "name": "phone", "data-type": "string", "record": "/city"}]}]]]></presto-meta>
+   <presto-meta name="showviewtitle" type="text">true</presto-meta>
+   <presto-meta name="layout" type="text">tab</presto-meta>
+   <presto-meta name="presto.desktopCompatible" type="text">true</presto-meta>
+   <presto-meta name="presto.phoneCompatible" type="text">false</presto-meta>
+   <presto-meta name="presto.tabletCompatible" type="text">false</presto-meta>
+   <presto-meta name="presto.shareable" type="text">true</presto-meta>
+   <presto-meta name="presto.allowOpenNewWindow" type="text">true</presto-meta>
+   <topics>
+      <topic datatype="object" name="propertychange" subscribe="true">
+         <properties>
+            <property datatype="string" name="city" required="false"/>
+         </properties>
+      </topic>
+      <topic datatype="object" name="rowselect" subscribe="true">
+         <properties>
+            <property datatype="string" name="phone" required="false"/>
+            <property datatype="string" name="manager" required="false"/>
+            <property datatype="string" name="name" required="false"/>
+         </properties>
+      </topic>
+      <topic datatype="object" name="dataTable.rowselect" publish="true">
+         <properties>
+            <property datatype="string" name="phone" required="false"/>
+            <property datatype="string" name="manager" required="false"/>
+            <property datatype="string" name="name" required="false"/>
+         </properties>
+      </topic>
+      <topic datatype="object" name="grid.rowclick" publish="true">
+         <properties>
+            <property datatype="string" name="name" required="false"/>
+            <property datatype="string" name="manager" required="false"/>
+            <property datatype="string" name="phone" required="false"/>
+         </properties>
+      </topic>
+   </topics>
+   <requires>
+      <require name="basic-app" type="library"/>
+   </requires>
+   <dependson>
+      <resource name="att_sample_mashup" operation="Invoke" type="service"/>
+   </dependson>
+</app>
