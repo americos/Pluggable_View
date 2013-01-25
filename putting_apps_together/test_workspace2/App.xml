@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<app height="100%" hideheader="true" id="test_workspace2"
+     jsclass="Presto.mashlet.Mashboard"
+     name="test workspace2"
+     resizable="true"
+     width="100%">
+   <title>test workspace2</title>
+   <description/>
+   <author>americo.savinon</author>
+   <properties>
+      <property datatype="enum" defaultvalue="tab" isinput="true" label="Drill down in:"
+                name="att_sample_graph_fordeux.target"
+                possiblevalues="tab,self"/>
+      <property datatype="enum" defaultvalue="MIAMI#01" isinput="true" label="city"
+                name="att_sample_combo_grid_selections.city"
+                possiblevalues="MIAMI#01,MIAMI#02,FTLAUDERDALE#01"/>
+      <property datatype="string" defaultvalue="MIAMI#01" isinput="true" label="city"
+                name="att_sample_app_recieves_param.city"/>
+   </properties>
+   <dependson>
+      <resource name="att_sample_graph_fordeux" type="app"/>
+      <resource name="att_sample_mashup_nohash_input" operation="Invoke" type="service"/>
+      <resource name="att_sample_combo_grid_selections" type="app"/>
+      <resource name="att_sample_mashup" operation="Invoke" type="service"/>
+      <resource name="att_sample_app_recieves_param" type="app"/>
+      <resource name="att_sample_button_selections" type="app"/>
+      <resource name="att_salesDrilldown" type="app"/>
+   </dependson>
+   <presto-meta name="config"><![CDATA[{"id": "test_workspace2", "name": "test workspace2", "title": "test workspace2", "description": "", "hideToolbar": true, "hidePalette": true, "hideTabs": true, "hideStatusBar": true, "height": "100%", "width": "100%", "main": {"width": "100%", "height": 502, "xtype": "ema-tabpanel", "showToolbar": false, "tabs": [{"headers": true, "borders": true, "padding": 5, "xtype": "ema-portalpanel", "columns": 2, "title": "First Tab", "header": false, "tabbedParent": true, "devmode": true, "cls": "ema-workspace", "items": [{"columnWidth": 0.5, "items": [{"title": "att_sample_graph_fordeux", "closable": false, "header": true, "frame": true, "collapsible": true, "draggable": false, "height": 300, "content": {"xtype": "mashletcontainer", "mid": "m198487", "secure": false, "text": "att_sample_graph_fordeux", "name": "att_sample_graph_fordeux", "args": {}, "editable": true}}, {"title": "att_sample_combo_grid_selections", "closable": false, "header": true, "frame": true, "collapsible": true, "draggable": false, "height": 300, "content": {"xtype": "mashletcontainer", "mid": "m434466", "secure": false, "text": "att_sample_combo_grid_selections", "name": "att_sample_combo_grid_selections", "args": {"city": "MIAMI#02"}, "editable": true}}]}, {"columnWidth": 0.5, "items": [{"title": "att_salesDrilldown", "closable": false, "header": true, "frame": true, "collapsible": true, "draggable": false, "height": 300, "content": {"xtype": "mashletcontainer", "mid": "m341365", "secure": false, "text": "att_salesDrilldown", "name": "att_salesDrilldown", "args": {}, "editable": true}}]}], "closable": true, "tabTip": "First Tab", "selected": false}, {"headers": true, "borders": true, "padding": 5, "xtype": "ema-portalpanel", "columns": 2, "title": "New", "header": false, "tabbedParent": true, "devmode": true, "cls": "ema-workspace", "items": [{"columnWidth": 0.5, "items": [{"title": "att_sample_button_selections", "closable": false, "header": true, "frame": true, "collapsible": true, "draggable": false, "height": 300, "content": {"xtype": "mashletcontainer", "mid": "m601281", "secure": false, "text": "att_sample_button_selections", "name": "att_sample_button_selections", "args": {}, "editable": true}}]}, {"columnWidth": 0.5, "items": [{"title": "att_sample_app_recieves_param", "closable": false, "header": true, "frame": true, "collapsible": true, "draggable": false, "height": 300, "content": {"xtype": "mashletcontainer", "mid": "m607279", "secure": false, "text": "att_sample_app_recieves_param", "name": "att_sample_app_recieves_param", "args": {}, "editable": true}}]}], "closable": true, "tabTip": "New", "selected": true}], "title": "test workspace2", "header": false, "tabbedParent": true, "devmode": true, "cls": "ema-workspace", "flex": 1, "tabTip": "", "tabWidth": 150, "renameableTabs": true, "closableTabs": true, "draggableTabs": true, "closable": true, "wid": "test_workspace2", "topics": [{"topic": "citySelected.att_sample_button_selections", "subscriptions": [{"mashletId": "m607279", "topic": "propertychange", "mapping": [{"column": "city", "label": "city"}], "enabled": true}], "topicAlias": "citySelected"}], "tabletApp": false, "operationalState": null, "featured": false, "entityType": "App", "type": "type.registryObject.mashlet", "creator": "americo.savinon", "version": null, "id": "test_workspace2", "resourceTypeId": "type.registryObject.mashlet", "resourceId": "test_workspace2", "lastChangedDate": "01/24/2013 21:04", "created": "01/24/2013 21:00", "description": "", "thumbnailUrl": null, "name": "test workspace2", "feedbackStatistics": {"averageRating": 0, "numberOfComments": 0, "numberOfRatings": 0}, "applications": [], "createdDate": "01/24/2013 21:00", "lastChangedBy": "americo.savinon", "tags": ["Workspace"], "workflowState": null, "lastModified": "01/24/2013 21:04", "status": "ON", "provider": "NONE", "androidApp": false, "administrationState": null, "category": null, "desktopApp": true, "readOnly": false, "phoneApp": false, "myFavorite": false, "subType": "App", "zipFileUrl": null, "createdDateTime": {"time": 1359061233000, "minutes": 0, "seconds": 33, "hours": 21, "month": 0, "owner": null, "value": {"time": 1359061233000}, "timezoneOffset": 0, "year": 113, "day": 4, "date": 24, "fieldName": null}, "categories": [], "public": false, "lastChangedDateTime": {"time": 1359061454000, "minutes": 4, "seconds": 14, "hours": 21, "month": 0, "owner": null, "value": {"time": 1359061454000}, "timezoneOffset": 0, "year": 113, "day": 4, "date": 24, "fieldName": null}, "allowedTargets": {"desktop": true, "tablet": false, "phone": false}}, "desktopCompatible": true, "phoneCompatible": false, "tabletCompatible": false}]]></presto-meta>
+   <presto-meta name="presto.desktopCompatible" type="text">true</presto-meta>
+   <presto-meta name="presto.phoneCompatible" type="text">false</presto-meta>
+   <presto-meta name="presto.tabletCompatible" type="text">false</presto-meta>
+   <presto-meta name="presto.mb.iconCls" type="text"/>
+   <requires>
+      <require name="mashboard-mashlet" type="library"/>
+      <require src="css/my-ext-theme.css" type="css"/> 
+   </requires>
+</app>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<app height="100%" hideheader="true" id="att_workspace"
+     jsclass="Presto.mashlet.Mashboard"
+     name="att workspace"
+     resizable="true"
+     width="100%">
+   <title>att workspace</title>
+   <description/>
+   <author>americo.savinon</author>
+   <properties>
+      <property datatype="enum" defaultvalue="tab" isinput="true" label="Drill down in:"
+                name="att_sample_graph_fordeux.target"
+                possiblevalues="tab,self"/>
+      <property datatype="string" defaultvalue="MIAMI#01" isinput="true" label="city"
+                name="att_sample_app_recieves_param.city"/>
+      <property datatype="enum" defaultvalue="MIAMI#01" isinput="true" label="city"
+                name="att_sample_combo_grid_selections.city"
+                possiblevalues="MIAMI#01,MIAMI#02,FTLAUDERDALE#01"/>
+   </properties>
+   <dependson>
+      <resource name="att_salesDrilldown" type="app"/>
+      <resource name="att_sample_button_selections" type="app"/>
+      <resource name="att_sample_graph_fordeux" type="app"/>
+      <resource name="att_sample_mashup_nohash_input" operation="Invoke" type="service"/>
+      <resource name="att_sample_app_recieves_param" type="app"/>
+      <resource name="att_sample_mashup" operation="Invoke" type="service"/>
+      <resource name="att_sample_combo_grid_selections" type="app"/>
+   </dependson>
+   <presto-meta name="config"><![CDATA[{"id": "att_workspace", "name": "att workspace", "title": "att workspace", "description": "", "hideToolbar": true, "hidePalette": true, "hideTabs": true, "hideStatusBar": true, "height": "100%", "width": "100%", "main": {"width": "100%", "height": 502, "xtype": "ema-tabpanel", "showToolbar": false, "tabs": [{"headers": true, "borders": true, "padding": 5, "xtype": "ema-portalpanel", "columns": 2, "title": "First Tab", "header": false, "tabbedParent": true, "devmode": true, "cls": "ema-workspace", "items": [{"columnWidth": 0.33, "items": [{"title": "Graph New Tab and In Place Drill-Down", "closable": false, "header": true, "frame": true, "collapsible": true, "draggable": false, "height": 300, "content": {"xtype": "mashletcontainer", "mid": "m125199", "secure": false, "text": "Graph New Tab and In Place Drill-Down", "name": "att_sample_graph_fordeux", "args": {}, "editable": true}}]}, {"columnWidth": 0.33, "items": [{"title": "In Graph Drill-Down", "closable": false, "header": true, "frame": true, "collapsible": true, "draggable": false, "height": 300, "content": {"xtype": "mashletcontainer", "mid": "m140116", "secure": false, "text": "In Graph Drill-Down", "name": "att_salesDrilldown", "args": {}, "editable": true}}]}, {"columnWidth": 0.33, "items": [{"title": "ComboBox Filter", "closable": false, "header": true, "frame": true, "collapsible": true, "draggable": false, "height": 300, "content": {"xtype": "mashletcontainer", "mid": "m215018", "secure": false, "text": "ComboBox Filter", "name": "att_sample_combo_grid_selections", "args": {}, "editable": true}}]}], "closable": true, "tabTip": "First Tab", "selected": false}, {"headers": true, "borders": true, "padding": 5, "xtype": "ema-portalpanel", "columns": 2, "title": "Second Tab", "header": false, "tabbedParent": true, "devmode": true, "cls": "ema-workspace", "items": [{"columnWidth": 0.5, "items": [{"title": "Button Filters", "closable": false, "header": true, "frame": true, "collapsible": true, "draggable": false, "height": 300, "content": {"xtype": "mashletcontainer", "mid": "m290980", "secure": false, "text": "Button Filters", "name": "att_sample_button_selections", "args": {}, "editable": true}}]}, {"columnWidth": 0.5, "items": [{"title": "Grid Filtered", "closable": false, "header": true, "frame": true, "collapsible": true, "draggable": false, "height": 300, "content": {"xtype": "mashletcontainer", "mid": "m294058", "secure": false, "text": "Grid Filtered", "name": "att_sample_app_recieves_param", "args": {}, "editable": true}}]}], "closable": true, "tabTip": "Second Tab", "selected": true}], "title": "att workspace", "header": false, "tabbedParent": true, "devmode": true, "cls": "ema-workspace", "flex": 1, "tabTip": "", "tabWidth": 150, "renameableTabs": true, "closableTabs": true, "draggableTabs": true, "closable": true, "wid": "att_workspace", "topics": [{"topic": "citySelected.att_sample_button_selections", "subscriptions": [{"mashletId": "m294058", "topic": "propertychange", "mapping": [{"column": "city", "label": "city"}], "enabled": true}], "topicAlias": "citySelected"}], "tabletApp": false, "operationalState": null, "featured": false, "entityType": "App", "type": "type.registryObject.mashlet", "creator": "americo.savinon", "version": null, "id": "att_workspace", "resourceTypeId": "type.registryObject.mashlet", "resourceId": "att_workspace", "lastChangedDate": "01/25/2013 00:38", "created": "01/25/2013 00:38", "description": "", "thumbnailUrl": null, "name": "att workspace", "feedbackStatistics": {"averageRating": 0, "numberOfComments": 0, "numberOfRatings": 0}, "applications": [], "createdDate": "01/25/2013 00:38", "lastChangedBy": "americo.savinon", "tags": ["Workspace"], "workflowState": null, "lastModified": "01/25/2013 00:38", "status": "ON", "provider": "NONE", "androidApp": false, "administrationState": null, "category": null, "desktopApp": true, "readOnly": false, "phoneApp": false, "myFavorite": false, "subType": "App", "zipFileUrl": null, "createdDateTime": {"time": 1359074333000, "minutes": 38, "seconds": 53, "hours": 0, "month": 0, "owner": null, "value": {"time": 1359074333000}, "timezoneOffset": 0, "year": 113, "day": 5, "date": 25, "fieldName": null}, "categories": [], "public": false, "lastChangedDateTime": {"time": 1359074333000, "minutes": 38, "seconds": 53, "hours": 0, "month": 0, "owner": null, "value": {"time": 1359074333000}, "timezoneOffset": 0, "year": 113, "day": 5, "date": 25, "fieldName": null}, "allowedTargets": {"desktop": true, "tablet": false, "phone": false}}, "desktopCompatible": true, "phoneCompatible": false, "tabletCompatible": false}]]></presto-meta>
+   <presto-meta name="presto.desktopCompatible" type="text">true</presto-meta>
+   <presto-meta name="presto.phoneCompatible" type="text">false</presto-meta>
+   <presto-meta name="presto.tabletCompatible" type="text">false</presto-meta>
+   <presto-meta name="presto.mb.iconCls" type="text"/>
+   <requires>
+      <require name="mashboard-mashlet" type="library"/>
+      <require src="css/my-ext-theme.css" type="css"/> 
+   </requires>
+</app>
